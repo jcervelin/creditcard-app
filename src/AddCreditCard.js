@@ -11,7 +11,9 @@ class AddCreditCard extends Component {
             name : '',
             cardNumber: '',
             limit: '',
-            balance: ''
+            balance: '',
+            displayMessage: '',
+            typeMessage: ''
         }
     }
 
