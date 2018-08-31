@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import AddCreditCard from './AddCreditCard';
 
 import './App.css';
+import CreditCardBox from './CreditCardBox';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -14,7 +15,7 @@ class App extends Component {
           </header>
           <h1 className="App-sub-title">Add</h1>
           <br/>
-          <AddCreditCard />
+           <CreditCardBox />
       </Container>
     </div>
 
