@@ -16,7 +16,6 @@ class AddCreditBox extends Component {
     }
 
     componentDidMount = () => {
-        console.log(`props did mouth ${JSON.stringify(this.props)}`)
         this.callGetAllCreditCards();
     }
 
@@ -61,4 +60,3 @@ class AddCreditBox extends Component {
 }
 
 export default AddCreditBox;
-

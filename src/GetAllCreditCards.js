@@ -10,9 +10,16 @@ class GetAllCreditCards extends Component {
             creditCards: []
         }
     }
+    
+    currencyClass = (event) => {
+        if (event < 0) {
+            return "negative";
+        }
+        return ""
+    }
 
-    componentDidMount = () => {
-        console.log(`props did mouth ${JSON.stringify(this.props)}`)
+    creditCardClass = (event) => {
+        return event.toString().replace(/([0-9]{4})/g," $1 ");
     }
 
     render () {
@@ -32,15 +39,17 @@ class GetAllCreditCards extends Component {
                         {creditCards.map((creditCard,idx) =>
                         <tr key={idx}>
                             <td>{creditCard.name}</td>
-                            <td>{creditCard.cardNumber}</td>
-                            <td><Currency
+                            <td>
+                                {this.creditCardClass(creditCard.cardNumber)}
+                            </td>
+                            <td className={this.currencyClass(creditCard.limit)}><Currency
                                 quantity={creditCard.limit}
                                 currency="GBP"
                                 decimal="."
                                 group=","
                                 />
                             </td>
-                            <td><Currency
+                            <td className={this.currencyClass(creditCard.balance)}><Currency
                                 quantity={creditCard.balance}
                                 currency="GBP"
                                 decimal="."
